@@ -1,3 +1,9 @@
+/*
+ * Licensed under the GNU General Public License version 2 with exceptions.
+ * Autor Kirill Pshenichnyi (c) 2019
+ * Just simple test EtherCAT protocol on Trinamic controller using libsoem
+ */
+
 #include <stdio.h>
 #include "ethercat.h"
 
@@ -98,7 +104,6 @@ int main(int argc,char *argv[]){
     //size = 2; ec_SDOread(1,0x6040,0,FALSE,&size,&control_word,100000);
     size = 2; ec_SDOread(1,0x6041,0,FALSE,&size,&status_word,100000);
     printf("Control Word: 0x%.4x, status word: 0x%.4x\n", control_word&0xffff,status_word&0xffff);
-
 
     return 0;
 }
